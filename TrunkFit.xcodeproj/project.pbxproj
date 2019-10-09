@@ -20,6 +20,7 @@
 		B366DBE6234D2FF700563D74 /* bmwx4.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B366DBE5234D2FF600563D74 /* bmwx4.jpeg */; };
 		B366DBE8234D317100563D74 /* bmwx5.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B366DBE7234D317100563D74 /* bmwx5.jpeg */; };
 		B366DBEA234D317900563D74 /* bmwi3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B366DBE9234D317900563D74 /* bmwi3.jpeg */; };
+		B366DBEC234D450400563D74 /* bluebg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B366DBEB234D450400563D74 /* bluebg.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,13 +32,14 @@
 		B366DBD0234D257C00563D74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B366DBD3234D257C00563D74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B366DBD5234D257C00563D74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B366DBDC234D282000563D74 /* UIButtonX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIButtonX.swift; path = Designables/UIButtonX.swift; sourceTree = "<group>"; };
+		B366DBDC234D282000563D74 /* UIButtonX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonX.swift; sourceTree = "<group>"; };
 		B366DBDD234D282000563D74 /* UILabelX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelX.swift; sourceTree = "<group>"; };
 		B366DBDE234D282000563D74 /* UIImageViewX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewX.swift; sourceTree = "<group>"; };
 		B366DBDF234D282000563D74 /* UIViewX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewX.swift; sourceTree = "<group>"; };
 		B366DBE5234D2FF600563D74 /* bmwx4.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmwx4.jpeg; sourceTree = "<group>"; };
 		B366DBE7234D317100563D74 /* bmwx5.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmwx5.jpeg; sourceTree = "<group>"; };
 		B366DBE9234D317900563D74 /* bmwi3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmwi3.jpeg; sourceTree = "<group>"; };
+		B366DBEB234D450400563D74 /* bluebg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bluebg.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +75,6 @@
 				B366DBC7234D257B00563D74 /* AppDelegate.swift */,
 				B366DBC9234D257B00563D74 /* art.scnassets */,
 				B366DBCB234D257B00563D74 /* ViewController.swift */,
-				B366DBDC234D282000563D74 /* UIButtonX.swift */,
 				B366DBE4234D2FD700563D74 /* CarImages */,
 				B366DBDB234D282000563D74 /* Designables */,
 				B366DBCD234D257B00563D74 /* Main.storyboard */,
@@ -88,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				B366DBDD234D282000563D74 /* UILabelX.swift */,
+				B366DBDC234D282000563D74 /* UIButtonX.swift */,
 				B366DBDE234D282000563D74 /* UIImageViewX.swift */,
 				B366DBDF234D282000563D74 /* UIViewX.swift */,
 			);
@@ -100,6 +102,7 @@
 				B366DBE5234D2FF600563D74 /* bmwx4.jpeg */,
 				B366DBE7234D317100563D74 /* bmwx5.jpeg */,
 				B366DBE9234D317900563D74 /* bmwi3.jpeg */,
+				B366DBEB234D450400563D74 /* bluebg.jpg */,
 			);
 			path = CarImages;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 			files = (
 				B366DBCA234D257B00563D74 /* art.scnassets in Resources */,
 				B366DBD4234D257C00563D74 /* LaunchScreen.storyboard in Resources */,
+				B366DBEC234D450400563D74 /* bluebg.jpg in Resources */,
 				B366DBE6234D2FF700563D74 /* bmwx4.jpeg in Resources */,
 				B366DBEA234D317900563D74 /* bmwi3.jpeg in Resources */,
 				B366DBE8234D317100563D74 /* bmwx5.jpeg in Resources */,
@@ -339,7 +343,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.personal.TrunkFit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -358,7 +362,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.personal.TrunkFit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

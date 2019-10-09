@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lzD-h4-jxm">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15508"/>
@@ -34,153 +34,16 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-204" y="-21"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="o1o-7s-eGc">
-            <objects>
-                <navigationController id="LIL-Pt-77e" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CM9-4c-zLx">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yZC-Os-e4H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1458" y="-21"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="JBC-x6-DCm">
-            <objects>
-                <viewController id="NaC-2B-dBO" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="QD8-wF-ruL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Old Screen" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dND-a6-hd2">
-                                <rect key="frame" x="16" y="131" width="343" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bmwx4.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="0sk-ed-clM" customClass="UIImageViewX" customModule="TrunkFit" customModuleProvider="target">
-                                <rect key="frame" x="16" y="294" width="343" height="224"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="224" id="8W4-gd-PYh"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="16"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetY">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </imageView>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="avE-Ko-i0t" customClass="UIViewX" customModule="TrunkFit" customModuleProvider="target">
-                                <rect key="frame" x="16" y="443" width="343" height="75"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="X4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s9f-KH-IJN">
-                                        <rect key="frame" x="259" y="28" width="76" height="39"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="42"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="horizontalGradient" value="NO"/>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
-                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
-                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="16"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My BMW" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tip-1I-tE2">
-                                <rect key="frame" x="16" y="247" width="154" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="32"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="vfg-CH-RJf" firstAttribute="trailing" secondItem="0sk-ed-clM" secondAttribute="trailing" constant="16" id="0u8-mJ-3fG"/>
-                            <constraint firstItem="0sk-ed-clM" firstAttribute="leading" secondItem="vfg-CH-RJf" secondAttribute="leading" constant="16" id="kid-0K-Pim"/>
-                            <constraint firstItem="0sk-ed-clM" firstAttribute="centerY" secondItem="QD8-wF-ruL" secondAttribute="centerY" id="lmZ-b7-g9a"/>
-                            <constraint firstItem="0sk-ed-clM" firstAttribute="centerX" secondItem="QD8-wF-ruL" secondAttribute="centerX" id="qGV-bo-tZb"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="vfg-CH-RJf"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Xyp-RT-mtL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3290" y="-21"/>
+            <point key="canvasLocation" x="-2348" y="667"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="vqa-8u-92u">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DGa-Cd-kdD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="ta2-EC-50k" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1Xz-eW-KAJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Good Afternoon, Turner." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fSy-dc-JUu">
-                                <rect key="frame" x="16" y="131" width="343" height="38.333333333333343"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DNB-bB-D6R" customClass="UIViewX" customModule="TrunkFit" customModuleProvider="target">
-                                <rect key="frame" x="16" y="443" width="343" height="75"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="X4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bjz-wO-rnc">
-                                        <rect key="frame" x="259" y="28" width="76" height="39"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="42"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="horizontalGradient" value="NO"/>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
-                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
-                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="16"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My BMW" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKF-Ic-Z3o">
-                                <rect key="frame" x="16" y="247" width="154" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="32"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DrL-YD-YjO" customClass="UIButtonX" customModule="TrunkFit" customModuleProvider="target">
                                 <rect key="frame" x="16" y="294" width="343" height="224"/>
                                 <constraints>
@@ -201,20 +64,121 @@
                                         <real key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="Xbt-pZ-Eod" kind="show" id="to2-He-xVS"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My BMW" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKF-Ic-Z3o">
+                                <rect key="frame" x="16" y="244" width="164" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="164" id="pDD-b5-5hA"/>
+                                    <constraint firstAttribute="height" constant="42" id="weW-4R-UFz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X4" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cy2-11-0Kz">
+                                <rect key="frame" x="195" y="526" width="164" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="Ief-la-KRP"/>
+                                    <constraint firstAttribute="width" constant="164" id="wVc-Rd-SuD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Snr-NM-W0y" customClass="UIButtonX" customModule="TrunkFit" customModuleProvider="target">
+                                <rect key="frame" x="105.66666666666669" y="601" width="164" height="42"/>
+                                <color key="backgroundColor" red="0.0" green="0.60392156862745094" blue="0.85490196078431369" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="164" id="Khg-aG-uLJ"/>
+                                    <constraint firstAttribute="height" constant="42" id="KtZ-y5-ZJJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                <state key="normal" title="Show Trunk">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="21"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="8ZO-2s-O7F" firstAttribute="trailing" secondItem="DrL-YD-YjO" secondAttribute="trailing" constant="16" id="1pu-r5-lQa"/>
+                            <constraint firstItem="Snr-NM-W0y" firstAttribute="top" secondItem="DrL-YD-YjO" secondAttribute="bottom" constant="83" id="DyT-gb-E0w"/>
+                            <constraint firstItem="8ZO-2s-O7F" firstAttribute="trailing" secondItem="Cy2-11-0Kz" secondAttribute="trailing" constant="16" id="MTc-ut-xaC"/>
                             <constraint firstItem="DrL-YD-YjO" firstAttribute="leading" secondItem="8ZO-2s-O7F" secondAttribute="leading" constant="16" id="Su5-MD-gAm"/>
+                            <constraint firstItem="Snr-NM-W0y" firstAttribute="centerX" secondItem="1Xz-eW-KAJ" secondAttribute="centerX" id="Vdk-a3-5j0"/>
                             <constraint firstItem="DrL-YD-YjO" firstAttribute="centerY" secondItem="1Xz-eW-KAJ" secondAttribute="centerY" id="ZdJ-oE-jw7"/>
+                            <constraint firstItem="tKF-Ic-Z3o" firstAttribute="leading" secondItem="8ZO-2s-O7F" secondAttribute="leading" constant="16" id="dst-3v-fSA"/>
                             <constraint firstItem="DrL-YD-YjO" firstAttribute="centerX" secondItem="1Xz-eW-KAJ" secondAttribute="centerX" id="lUS-Gq-pAO"/>
+                            <constraint firstItem="Cy2-11-0Kz" firstAttribute="top" secondItem="DrL-YD-YjO" secondAttribute="bottom" constant="8" id="xIh-yJ-71D"/>
+                            <constraint firstItem="DrL-YD-YjO" firstAttribute="top" secondItem="tKF-Ic-Z3o" secondAttribute="bottom" constant="8" id="zRb-5z-iF2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8ZO-2s-O7F"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Wlb-If-0gg"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DGa-Cd-kdD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2348" y="-21"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dcJ-tu-O4T">
+            <objects>
+                <navigationController id="lzD-h4-jxm" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="biX-yW-wQv"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4gc-qw-fV4">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.26782502348564458" green="0.6421381054184705" blue="0.84424571700507611" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ta2-EC-50k" kind="relationship" relationship="rootViewController" id="tgB-ix-Rw9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kb7-Ge-kqs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3244" y="-21"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="EU0-b3-vEe">
+            <objects>
+                <viewController id="Xbt-pZ-Eod" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KPG-B4-TfI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Model: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I9K-8u-doM">
+                                <rect key="frame" x="16" y="99" width="164" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="0gc-HF-DeV"/>
+                                    <constraint firstAttribute="width" constant="164" id="tIZ-Ft-Tje"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Euv-vK-lAP"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="9Si-RC-PIS">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="IXm-QC-lfG"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yfh-cu-V5X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1482" y="-21"/>
         </scene>
     </scenes>
     <resources>
