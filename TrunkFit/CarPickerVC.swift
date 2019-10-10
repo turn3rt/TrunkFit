@@ -48,9 +48,23 @@ extension CarPickerVC: UICollectionViewDataSource, UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-      
-      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SeriesCVCell", for: indexPath) as! SeriesCVCell
- //     cell.seriesLabel.text = SeriesNames[indexPath.row]
-      return cell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SeriesCVCell", for: indexPath) as! SeriesCVCell
+        cell.seriesLabel.text = SeriesNames[indexPath.row]
+        
+        if indexPath.row != 0 {
+            cell.seriesLabel.textColor = .lightGray
+        } else {
+            cell.seriesLabel.font = cell.seriesLabel.font.withSize(32)
+        }
+        
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        let height = self.collectionView.frame.height
+        let width = CGFloat(8)
+        return CGSize(width: width, height: height)
     }
 }

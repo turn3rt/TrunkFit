@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "101CD9AB-D43E-4ADA-8977-0F66A7C6D7F8"
-            shouldBeEnabled = "No"
+            uuid = "1C70E05D-4F8B-4A1E-93B9-E2F5D8E6713F"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TrunkFit/CarPickerVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "collectionView(_:cellForItemAt:)"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "collectionView(_:layout:sizeForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
