@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lzD-h4-jxm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lzD-h4-jxm">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15508"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="TrunkFit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="Trunk_Mate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U0K-SW-4ec">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -36,16 +37,16 @@
             </objects>
             <point key="canvasLocation" x="-2348" y="667"/>
         </scene>
-        <!--View Controller-->
+        <!--HomeVC-->
         <scene sceneID="vqa-8u-92u">
             <objects>
-                <viewController id="ta2-EC-50k" sceneMemberID="viewController">
+                <viewController id="ta2-EC-50k" customClass="HomeVC" customModule="Trunk_Mate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1Xz-eW-KAJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DrL-YD-YjO" customClass="UIButtonX" customModule="TrunkFit" customModuleProvider="target">
-                                <rect key="frame" x="16" y="294" width="343" height="224"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DrL-YD-YjO" customClass="UIButtonX" customModule="Trunk_Mate" customModuleProvider="target">
+                                <rect key="frame" x="16" y="326" width="343" height="224"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="224" id="CPP-06-gCC"/>
                                 </constraints>
@@ -69,7 +70,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My BMW" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKF-Ic-Z3o">
-                                <rect key="frame" x="16" y="244" width="164" height="42"/>
+                                <rect key="frame" x="16" y="276" width="164" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="164" id="pDD-b5-5hA"/>
                                     <constraint firstAttribute="height" constant="42" id="weW-4R-UFz"/>
@@ -79,7 +80,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X4" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cy2-11-0Kz">
-                                <rect key="frame" x="195" y="526" width="164" height="42"/>
+                                <rect key="frame" x="195" y="558" width="164" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="Ief-la-KRP"/>
                                     <constraint firstAttribute="width" constant="164" id="wVc-Rd-SuD"/>
@@ -88,8 +89,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Snr-NM-W0y" customClass="UIButtonX" customModule="TrunkFit" customModuleProvider="target">
-                                <rect key="frame" x="105.66666666666669" y="601" width="164" height="42"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Snr-NM-W0y" customClass="UIButtonX" customModule="Trunk_Mate" customModuleProvider="target">
+                                <rect key="frame" x="105.66666666666669" y="633" width="164" height="42"/>
                                 <color key="backgroundColor" red="0.0" green="0.60392156862745094" blue="0.85490196078431369" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="164" id="Khg-aG-uLJ"/>
@@ -105,17 +106,38 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trunk Mate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LiF-e1-LNs">
+                                <rect key="frame" x="122.66666666666669" y="112" width="130" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="2eY-0U-3TM"/>
+                                    <constraint firstAttribute="width" constant="130" id="Ad6-AK-Xft"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TrunkMateLogo_NoBG.png" translatesAutoresizingMaskIntoConstraints="NO" id="4Cn-QZ-k7H">
+                                <rect key="frame" x="32" y="114" width="311" height="148"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="148" id="oMV-It-WMh"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="8ZO-2s-O7F" firstAttribute="trailing" secondItem="DrL-YD-YjO" secondAttribute="trailing" constant="16" id="1pu-r5-lQa"/>
+                            <constraint firstItem="LiF-e1-LNs" firstAttribute="centerX" secondItem="1Xz-eW-KAJ" secondAttribute="centerX" id="4i3-TX-jtk"/>
+                            <constraint firstItem="4Cn-QZ-k7H" firstAttribute="leading" secondItem="8ZO-2s-O7F" secondAttribute="leading" constant="32" id="8E0-XC-0cz"/>
+                            <constraint firstItem="4Cn-QZ-k7H" firstAttribute="top" secondItem="LiF-e1-LNs" secondAttribute="bottom" constant="-32" id="9ne-QJ-OFc"/>
                             <constraint firstItem="Snr-NM-W0y" firstAttribute="top" secondItem="DrL-YD-YjO" secondAttribute="bottom" constant="83" id="DyT-gb-E0w"/>
+                            <constraint firstItem="8ZO-2s-O7F" firstAttribute="trailing" secondItem="4Cn-QZ-k7H" secondAttribute="trailing" constant="32" id="ICm-qN-jdw"/>
                             <constraint firstItem="8ZO-2s-O7F" firstAttribute="trailing" secondItem="Cy2-11-0Kz" secondAttribute="trailing" constant="16" id="MTc-ut-xaC"/>
                             <constraint firstItem="DrL-YD-YjO" firstAttribute="leading" secondItem="8ZO-2s-O7F" secondAttribute="leading" constant="16" id="Su5-MD-gAm"/>
                             <constraint firstItem="Snr-NM-W0y" firstAttribute="centerX" secondItem="1Xz-eW-KAJ" secondAttribute="centerX" id="Vdk-a3-5j0"/>
-                            <constraint firstItem="DrL-YD-YjO" firstAttribute="centerY" secondItem="1Xz-eW-KAJ" secondAttribute="centerY" id="ZdJ-oE-jw7"/>
+                            <constraint firstItem="DrL-YD-YjO" firstAttribute="centerY" secondItem="1Xz-eW-KAJ" secondAttribute="centerY" constant="32" id="ZdJ-oE-jw7"/>
                             <constraint firstItem="tKF-Ic-Z3o" firstAttribute="leading" secondItem="8ZO-2s-O7F" secondAttribute="leading" constant="16" id="dst-3v-fSA"/>
                             <constraint firstItem="DrL-YD-YjO" firstAttribute="centerX" secondItem="1Xz-eW-KAJ" secondAttribute="centerX" id="lUS-Gq-pAO"/>
+                            <constraint firstItem="LiF-e1-LNs" firstAttribute="top" secondItem="8ZO-2s-O7F" secondAttribute="top" constant="24" id="me7-iQ-wLl"/>
                             <constraint firstItem="Cy2-11-0Kz" firstAttribute="top" secondItem="DrL-YD-YjO" secondAttribute="bottom" constant="8" id="xIh-yJ-71D"/>
                             <constraint firstItem="DrL-YD-YjO" firstAttribute="top" secondItem="tKF-Ic-Z3o" secondAttribute="bottom" constant="8" id="zRb-5z-iF2"/>
                         </constraints>
@@ -125,7 +147,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DGa-Cd-kdD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2348" y="-21"/>
+            <point key="canvasLocation" x="-2348" y="-21.428571428571431"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dcJ-tu-O4T">
@@ -150,19 +172,56 @@
             </objects>
             <point key="canvasLocation" x="-3244" y="-21"/>
         </scene>
-        <!--View Controller-->
+        <!--Car PickerVC-->
         <scene sceneID="EU0-b3-vEe">
             <objects>
-                <viewController id="Xbt-pZ-Eod" sceneMemberID="viewController">
+                <viewController id="Xbt-pZ-Eod" customClass="CarPickerVC" customModule="Trunk_Mate" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KPG-B4-TfI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Model: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I9K-8u-doM">
-                                <rect key="frame" x="16" y="99" width="164" height="42"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="e0v-1a-Wpp">
+                                <rect key="frame" x="132" y="96" width="243" height="42"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="cNH-zU-CzY"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="1" minimumInteritemSpacing="1" id="K1C-HU-nvo">
+                                    <size key="itemSize" width="42" height="42"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SeriesCVCell" id="rrO-uX-37h" customClass="SeriesCVCell" customModule="Trunk_Mate">
+                                        <rect key="frame" x="0.0" y="0.0" width="42" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="9zD-hr-UJ7">
+                                            <rect key="frame" x="0.0" y="0.0" width="42" height="42"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="m7s-Lg-xyY">
+                                                    <rect key="frame" x="0.0" y="0.0" width="42" height="42"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <size key="customSize" width="42" height="42"/>
+                                        <connections>
+                                            <outlet property="seriesLabel" destination="m7s-Lg-xyY" id="Cpk-DI-oOm"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Series:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I9K-8u-doM">
+                                <rect key="frame" x="16" y="96" width="100" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="0gc-HF-DeV"/>
-                                    <constraint firstAttribute="width" constant="164" id="tIZ-Ft-Tje"/>
+                                    <constraint firstAttribute="width" constant="100" id="djw-f5-D8Z"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="32"/>
                                 <nil key="textColor"/>
@@ -170,18 +229,29 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="e0v-1a-Wpp" firstAttribute="trailing" secondItem="Euv-vK-lAP" secondAttribute="trailing" id="Yk8-RJ-1c7"/>
+                            <constraint firstItem="e0v-1a-Wpp" firstAttribute="leading" secondItem="I9K-8u-doM" secondAttribute="trailing" constant="16" id="c6V-cR-Qwu"/>
+                            <constraint firstItem="e0v-1a-Wpp" firstAttribute="top" secondItem="Euv-vK-lAP" secondAttribute="top" constant="8" id="cwO-Zd-WVG"/>
+                            <constraint firstItem="I9K-8u-doM" firstAttribute="top" secondItem="Euv-vK-lAP" secondAttribute="top" constant="8" id="pbe-k0-Qqe"/>
+                            <constraint firstItem="I9K-8u-doM" firstAttribute="leading" secondItem="Euv-vK-lAP" secondAttribute="leading" constant="16" id="r3Q-Q9-3Wu"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Euv-vK-lAP"/>
                     </view>
                     <navigationItem key="navigationItem" id="9Si-RC-PIS">
                         <barButtonItem key="backBarButtonItem" title="Back" id="IXm-QC-lfG"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="e0v-1a-Wpp" id="3xj-n0-4ev"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yfh-cu-V5X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1482" y="-21"/>
+            <point key="canvasLocation" x="-1482.4000000000001" y="-21.428571428571431"/>
         </scene>
     </scenes>
     <resources>
+        <image name="TrunkMateLogo_NoBG.png" width="1022" height="918"/>
         <image name="bmwx4.jpeg" width="2921.25" height="1764"/>
     </resources>
 </document>

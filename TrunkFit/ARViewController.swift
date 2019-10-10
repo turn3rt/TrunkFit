@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ARViewController.swift
 //  TrunkFit
 //
 //  Created by Turner Thornberry on 10/8/19.
