@@ -9,6 +9,6 @@
 import Foundation
 
 
-let SeriesNames = ["1", "2", "3", "4", "5", "6", "7", "8", "X", "Z", "M", "i"]
+let SeriesNames = ["P", "1", "2", "3", "4", "5", "6", "7", "8", "X", "Z", "M", "i"]
 
 let DemoModalNames = ["X4", "X5", "i3"]

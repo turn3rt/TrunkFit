@@ -144,6 +144,10 @@
                         <viewLayoutGuide key="safeArea" id="8ZO-2s-O7F"/>
                     </view>
                     <navigationItem key="navigationItem" id="Wlb-If-0gg"/>
+                    <connections>
+                        <outlet property="myBMWbutton" destination="DrL-YD-YjO" id="fQo-mc-vUF"/>
+                        <outlet property="myBMWlabel" destination="Cy2-11-0Kz" id="d81-LM-5Xd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DGa-Cd-kdD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -181,30 +185,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Series:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I9K-8u-doM">
-                                <rect key="frame" x="16" y="95" width="100" height="42"/>
+                                <rect key="frame" x="16" y="104" width="132" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="0gc-HF-DeV"/>
-                                    <constraint firstAttribute="width" constant="100" id="djw-f5-D8Z"/>
+                                    <constraint firstAttribute="width" constant="132" id="djw-f5-D8Z"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="32"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="42"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5cf-Zb-A9D">
-                                <rect key="frame" x="0.0" y="146" width="375" height="666"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5cf-Zb-A9D">
+                                <rect key="frame" x="0.0" y="162" width="375" height="650"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ModelImage" rowHeight="224" id="YAZ-iR-qQf" customClass="ModelTVCell" customModule="Trunk_Mate" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="224"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ModelImage" rowHeight="216" id="YAZ-iR-qQf" customClass="ModelTVCell" customModule="Trunk_Mate" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="216"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YAZ-iR-qQf" id="tsH-Dw-tsp">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="224"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="216"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bmw2.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="Ad9-hE-wXb" customClass="UIImageViewX" customModule="Trunk_Mate" customModuleProvider="target">
-                                                    <rect key="frame" x="8" y="0.0" width="359" height="208"/>
+                                                    <rect key="frame" x="8" y="0.0" width="359" height="200"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="208" id="y1U-Gz-Z6X"/>
+                                                        <constraint firstAttribute="height" constant="194" id="y1U-Gz-Z6X"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -216,10 +220,10 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Yk-gO-y2e" customClass="UIViewX" customModule="Trunk_Mate" customModuleProvider="target">
-                                                    <rect key="frame" x="8" y="108" width="359" height="100"/>
+                                                    <rect key="frame" x="8" y="136" width="359" height="64"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X5" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OK4-ZB-h6D">
-                                                            <rect key="frame" x="243" y="50" width="100" height="42"/>
+                                                            <rect key="frame" x="243" y="14" width="100" height="42"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="100" id="3rZ-Yj-qit"/>
                                                                 <constraint firstAttribute="height" constant="42" id="KZT-rg-6TY"/>
@@ -232,7 +236,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="OK4-ZB-h6D" secondAttribute="trailing" constant="16" id="GMa-uw-Ryx"/>
                                                         <constraint firstAttribute="bottom" secondItem="OK4-ZB-h6D" secondAttribute="bottom" constant="8" id="ZV5-Vi-22c"/>
-                                                        <constraint firstAttribute="height" constant="100" id="amu-tc-qrZ"/>
+                                                        <constraint firstAttribute="height" constant="64" id="amu-tc-qrZ"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
@@ -265,28 +269,28 @@
                                 </prototypes>
                             </tableView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="e0v-1a-Wpp">
-                                <rect key="frame" x="119" y="96" width="256" height="42"/>
+                                <rect key="frame" x="148" y="104" width="227" height="42"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="cNH-zU-CzY"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="7" minimumInteritemSpacing="6" id="EMQ-M8-YJo">
-                                    <size key="itemSize" width="24" height="42"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EMQ-M8-YJo">
+                                    <size key="itemSize" width="30" height="42"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SeriesCVCell" translatesAutoresizingMaskIntoConstraints="NO" id="rrO-uX-37h" customClass="SeriesCVCell" customModule="Trunk_Mate">
-                                        <rect key="frame" x="0.0" y="0.0" width="24" height="42"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="OfF-Xm-eyD">
-                                            <rect key="frame" x="0.0" y="0.0" width="24" height="42"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="30" height="42"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOu-In-80i">
-                                                    <rect key="frame" x="0.0" y="0.0" width="24" height="42"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="30" height="42"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -299,7 +303,7 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <viewLayoutGuide key="safeArea" id="AIx-Gg-aop"/>
-                                        <size key="customSize" width="24" height="42"/>
+                                        <size key="customSize" width="30" height="42"/>
                                         <connections>
                                             <outlet property="seriesLabel" destination="uOu-In-80i" id="J3I-w3-OKP"/>
                                         </connections>
@@ -310,13 +314,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="5cf-Zb-A9D" firstAttribute="trailing" secondItem="Euv-vK-lAP" secondAttribute="trailing" id="5CV-F0-jrg"/>
-                            <constraint firstItem="5cf-Zb-A9D" firstAttribute="top" secondItem="e0v-1a-Wpp" secondAttribute="bottom" constant="8" id="Yii-r8-QPd"/>
+                            <constraint firstItem="5cf-Zb-A9D" firstAttribute="top" secondItem="e0v-1a-Wpp" secondAttribute="bottom" constant="16" id="Yii-r8-QPd"/>
                             <constraint firstItem="e0v-1a-Wpp" firstAttribute="trailing" secondItem="Euv-vK-lAP" secondAttribute="trailing" id="Yk8-RJ-1c7"/>
-                            <constraint firstItem="e0v-1a-Wpp" firstAttribute="leading" secondItem="I9K-8u-doM" secondAttribute="trailing" constant="3" id="c6V-cR-Qwu"/>
-                            <constraint firstItem="e0v-1a-Wpp" firstAttribute="top" secondItem="Euv-vK-lAP" secondAttribute="top" constant="8" id="cwO-Zd-WVG"/>
+                            <constraint firstItem="e0v-1a-Wpp" firstAttribute="leading" secondItem="I9K-8u-doM" secondAttribute="trailing" id="c6V-cR-Qwu"/>
+                            <constraint firstItem="e0v-1a-Wpp" firstAttribute="top" secondItem="Euv-vK-lAP" secondAttribute="top" constant="16" id="cwO-Zd-WVG"/>
                             <constraint firstItem="5cf-Zb-A9D" firstAttribute="leading" secondItem="Euv-vK-lAP" secondAttribute="leading" id="hbk-gK-D7g"/>
                             <constraint firstAttribute="bottom" secondItem="5cf-Zb-A9D" secondAttribute="bottom" id="ijb-1c-Qzt"/>
-                            <constraint firstItem="I9K-8u-doM" firstAttribute="top" secondItem="Euv-vK-lAP" secondAttribute="top" constant="7" id="pbe-k0-Qqe"/>
+                            <constraint firstItem="I9K-8u-doM" firstAttribute="top" secondItem="Euv-vK-lAP" secondAttribute="top" constant="16" id="pbe-k0-Qqe"/>
                             <constraint firstItem="I9K-8u-doM" firstAttribute="leading" secondItem="Euv-vK-lAP" secondAttribute="leading" constant="16" id="r3Q-Q9-3Wu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Euv-vK-lAP"/>
@@ -337,6 +341,6 @@
     <resources>
         <image name="TrunkMateLogo_NoBG.png" width="1022" height="918"/>
         <image name="bmw1.jpeg" width="2921.25" height="1764"/>
-        <image name="bmw2.jpeg" width="480" height="319.92001342773438"/>
+        <image name="bmw2.jpeg" width="475.92001342773438" height="281.760009765625"/>
     </resources>
 </document>

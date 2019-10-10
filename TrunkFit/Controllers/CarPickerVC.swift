@@ -33,8 +33,10 @@ class CarPickerVC: UIViewController {
         }
     }
     
-    // MARK: Internal Vars
+    // MARK: Internal Vars & Constants
     var modelImages = [UIImage]()
+    
+    let userDefaults = UserDefaults.standard
     
     
     
@@ -65,8 +67,10 @@ extension CarPickerVC: UICollectionViewDataSource, UICollectionViewDelegate {
         
         if indexPath.row != 0 {
             cell.seriesLabel.textColor = .lightGray
-        } else {
             cell.seriesLabel.font = cell.seriesLabel.font.withSize(32)
+        } else {
+            cell.seriesLabel.textColor = .black
+            cell.seriesLabel.font = cell.seriesLabel.font.withSize(42)
         }
         return cell
     }
@@ -91,7 +95,12 @@ extension CarPickerVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("user selected: \(indexPath)")
+        userDefaults.set(indexPath.row, forKey: "myBMW")
+
+        navigationController?.popViewController(animated: true)
+    }
     
     
 }

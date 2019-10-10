@@ -15,7 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        // Set default car if user has not selected one
+        UserDefaults.standard.register(defaults: ["myBMW": 0,
+        // add more if needed...
+        ])
         return true
     }
 
