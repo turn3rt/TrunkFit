@@ -7,15 +7,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "97B9AA56-1D74-4A2B-9203-9EEE46BFBEFA"
+            uuid = "8C2D7242-676F-4FEA-8F86-9C6C60D752B4"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TrunkFit/Controllers/HomeVC.swift"
+            filePath = "TrunkFit/Controllers/CarPickerVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>

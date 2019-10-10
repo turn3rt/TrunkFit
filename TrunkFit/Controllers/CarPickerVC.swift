@@ -16,9 +16,13 @@ class CarPickerVC: UIViewController {
 
     
     // MARK: Life Cycle Methods
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = false
+        self.navigationController?.navigationBar.isTranslucent = false
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.isHidden = false
         
         collectionView.dataSource = self
         collectionView.delegate = self
