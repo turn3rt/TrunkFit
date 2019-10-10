@@ -17,15 +17,16 @@
 		B366DBE1234D282000563D74 /* UILabelX.swift in Sources */ = {isa = PBXBuildFile; fileRef = B366DBDD234D282000563D74 /* UILabelX.swift */; };
 		B366DBE2234D282000563D74 /* UIImageViewX.swift in Sources */ = {isa = PBXBuildFile; fileRef = B366DBDE234D282000563D74 /* UIImageViewX.swift */; };
 		B366DBE3234D282000563D74 /* UIViewX.swift in Sources */ = {isa = PBXBuildFile; fileRef = B366DBDF234D282000563D74 /* UIViewX.swift */; };
-		B366DBE6234D2FF700563D74 /* bmwx4.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B366DBE5234D2FF600563D74 /* bmwx4.jpeg */; };
-		B366DBE8234D317100563D74 /* bmwx5.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B366DBE7234D317100563D74 /* bmwx5.jpeg */; };
-		B366DBEA234D317900563D74 /* bmwi3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B366DBE9234D317900563D74 /* bmwi3.jpeg */; };
+		B366DBE6234D2FF700563D74 /* bmw1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B366DBE5234D2FF600563D74 /* bmw1.jpeg */; };
+		B366DBE8234D317100563D74 /* bmw2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B366DBE7234D317100563D74 /* bmw2.jpeg */; };
+		B366DBEA234D317900563D74 /* bmw3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B366DBE9234D317900563D74 /* bmw3.jpeg */; };
 		B366DBEC234D450400563D74 /* bluebg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B366DBEB234D450400563D74 /* bluebg.jpg */; };
 		B3854FBA234E7AEB00007D70 /* TrunkMateLogo_NoBG.png in Resources */ = {isa = PBXBuildFile; fileRef = B3854FB9234E7AEB00007D70 /* TrunkMateLogo_NoBG.png */; };
 		B3854FBE234E7D1C00007D70 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3854FBD234E7D1C00007D70 /* HomeVC.swift */; };
 		B3854FC0234E846B00007D70 /* CarPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3854FBF234E846B00007D70 /* CarPickerVC.swift */; };
 		B3854FC2234E8AE300007D70 /* SeriesCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3854FC1234E8AE300007D70 /* SeriesCVCell.swift */; };
 		B3854FC4234E8BD200007D70 /* DataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3854FC3234E8BD200007D70 /* DataModels.swift */; };
+		B3A7751F234EBA5100729A33 /* ModelTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A7751E234EBA5100729A33 /* ModelTVCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,15 +42,16 @@
 		B366DBDD234D282000563D74 /* UILabelX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelX.swift; sourceTree = "<group>"; };
 		B366DBDE234D282000563D74 /* UIImageViewX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewX.swift; sourceTree = "<group>"; };
 		B366DBDF234D282000563D74 /* UIViewX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewX.swift; sourceTree = "<group>"; };
-		B366DBE5234D2FF600563D74 /* bmwx4.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmwx4.jpeg; sourceTree = "<group>"; };
-		B366DBE7234D317100563D74 /* bmwx5.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmwx5.jpeg; sourceTree = "<group>"; };
-		B366DBE9234D317900563D74 /* bmwi3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmwi3.jpeg; sourceTree = "<group>"; };
+		B366DBE5234D2FF600563D74 /* bmw1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw1.jpeg; sourceTree = "<group>"; };
+		B366DBE7234D317100563D74 /* bmw2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw2.jpeg; sourceTree = "<group>"; };
+		B366DBE9234D317900563D74 /* bmw3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw3.jpeg; sourceTree = "<group>"; };
 		B366DBEB234D450400563D74 /* bluebg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bluebg.jpg; sourceTree = "<group>"; };
 		B3854FB9234E7AEB00007D70 /* TrunkMateLogo_NoBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TrunkMateLogo_NoBG.png; sourceTree = "<group>"; };
 		B3854FBD234E7D1C00007D70 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		B3854FBF234E846B00007D70 /* CarPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPickerVC.swift; sourceTree = "<group>"; };
 		B3854FC1234E8AE300007D70 /* SeriesCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesCVCell.swift; sourceTree = "<group>"; };
 		B3854FC3234E8BD200007D70 /* DataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModels.swift; sourceTree = "<group>"; };
+		B3A7751E234EBA5100729A33 /* ModelTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTVCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,10 +86,9 @@
 			children = (
 				B366DBC7234D257B00563D74 /* AppDelegate.swift */,
 				B366DBC9234D257B00563D74 /* art.scnassets */,
-				B366DBCB234D257B00563D74 /* ARViewController.swift */,
-				B3854FBD234E7D1C00007D70 /* HomeVC.swift */,
-				B3854FC1234E8AE300007D70 /* SeriesCVCell.swift */,
-				B3854FBF234E846B00007D70 /* CarPickerVC.swift */,
+				B3A77523234EBAB800729A33 /* TableCells */,
+				B3A77521234EBA6100729A33 /* CollectionCells */,
+				B3A77520234EBA5A00729A33 /* Controllers */,
 				B3854FC3234E8BD200007D70 /* DataModels.swift */,
 				B366DBE4234D2FD700563D74 /* CarImages */,
 				B366DBDB234D282000563D74 /* Designables */,
@@ -113,13 +114,39 @@
 		B366DBE4234D2FD700563D74 /* CarImages */ = {
 			isa = PBXGroup;
 			children = (
-				B366DBE5234D2FF600563D74 /* bmwx4.jpeg */,
-				B366DBE7234D317100563D74 /* bmwx5.jpeg */,
-				B366DBE9234D317900563D74 /* bmwi3.jpeg */,
+				B366DBE5234D2FF600563D74 /* bmw1.jpeg */,
+				B366DBE7234D317100563D74 /* bmw2.jpeg */,
+				B366DBE9234D317900563D74 /* bmw3.jpeg */,
 				B366DBEB234D450400563D74 /* bluebg.jpg */,
 				B3854FB9234E7AEB00007D70 /* TrunkMateLogo_NoBG.png */,
 			);
 			path = CarImages;
+			sourceTree = "<group>";
+		};
+		B3A77520234EBA5A00729A33 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B366DBCB234D257B00563D74 /* ARViewController.swift */,
+				B3854FBF234E846B00007D70 /* CarPickerVC.swift */,
+				B3854FBD234E7D1C00007D70 /* HomeVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B3A77521234EBA6100729A33 /* CollectionCells */ = {
+			isa = PBXGroup;
+			children = (
+				B3854FC1234E8AE300007D70 /* SeriesCVCell.swift */,
+			);
+			path = CollectionCells;
+			sourceTree = "<group>";
+		};
+		B3A77523234EBAB800729A33 /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				B3A7751E234EBA5100729A33 /* ModelTVCell.swift */,
+			);
+			path = TableCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,9 +211,9 @@
 				B366DBD4234D257C00563D74 /* LaunchScreen.storyboard in Resources */,
 				B366DBEC234D450400563D74 /* bluebg.jpg in Resources */,
 				B3854FBA234E7AEB00007D70 /* TrunkMateLogo_NoBG.png in Resources */,
-				B366DBE6234D2FF700563D74 /* bmwx4.jpeg in Resources */,
-				B366DBEA234D317900563D74 /* bmwi3.jpeg in Resources */,
-				B366DBE8234D317100563D74 /* bmwx5.jpeg in Resources */,
+				B366DBE6234D2FF700563D74 /* bmw1.jpeg in Resources */,
+				B366DBEA234D317900563D74 /* bmw3.jpeg in Resources */,
+				B366DBE8234D317100563D74 /* bmw2.jpeg in Resources */,
 				B366DBD1234D257C00563D74 /* Assets.xcassets in Resources */,
 				B366DBCF234D257B00563D74 /* Main.storyboard in Resources */,
 			);
@@ -202,6 +229,7 @@
 				B366DBCC234D257B00563D74 /* ARViewController.swift in Sources */,
 				B3854FC0234E846B00007D70 /* CarPickerVC.swift in Sources */,
 				B3854FBE234E7D1C00007D70 /* HomeVC.swift in Sources */,
+				B3A7751F234EBA5100729A33 /* ModelTVCell.swift in Sources */,
 				B3854FC2234E8AE300007D70 /* SeriesCVCell.swift in Sources */,
 				B366DBE2234D282000563D74 /* UIImageViewX.swift in Sources */,
 				B366DBC8234D257B00563D74 /* AppDelegate.swift in Sources */,
