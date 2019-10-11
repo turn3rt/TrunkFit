@@ -23,7 +23,12 @@ class ViewController: UIViewController {
     // Prompts user to find planes
     let coachingOverlay = ARCoachingOverlayView()
     var focusSquare = FocusSquare()
+    
+    // Because I'm lazy
     let updateQueue = DispatchQueue.main
+    
+    // flag to indicate if user has placed trunk
+    var hasPlacedTrunk = false
     
     
    // MARK: - Controller Life Cycle
@@ -75,14 +80,24 @@ class ViewController: UIViewController {
     
     
     func showTrunk() {
+        let bottomPlane = SCNBox(width: 0.1, height: 0.1, length: 0.1, chamferRadius: 0.01)
+        let bottomPlaneNode = SCNNode(geometry: bottomPlane)
+        bottomPlaneNode.position = SCNVector3(focusSquare.lastPosition!)
         
+        let material = SCNMaterial()
+        material.diffuse.contents = UIColor.green
+        bottomPlane.firstMaterial  = material
+        
+        sceneView.scene.rootNode.addChildNode(bottomPlaneNode)
+        
+        hasPlacedTrunk = true
     }
     
     
     
     // MARK: - Focus Square
-    func updateFocusSquare() {
-        if coachingOverlay.isActive {
+    func updateFocusSquare(hasPlacedTrunk: Bool) {
+        if coachingOverlay.isActive || hasPlacedTrunk {
             focusSquare.hide()
         } else {
             focusSquare.unhide()
@@ -135,9 +150,6 @@ extension ViewController: ARCoachingOverlayViewDelegate {
             ])
         
         setActivatesAutomatically()
-        
-        // Most of the virtual objects in this sample require a horizontal surface,
-        // therefore coach the user to find a horizontal plane.
         setGoal()
     }
     
@@ -157,7 +169,7 @@ extension ViewController: ARSCNViewDelegate, ARSessionDelegate {
     // This executes every time user moves camera
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         DispatchQueue.main.async {
-            self.updateFocusSquare()
+            self.updateFocusSquare(hasPlacedTrunk: self.hasPlacedTrunk)
             // print("\(self.focusSquare.lastPosition)") //
         }
     }
@@ -166,10 +178,10 @@ extension ViewController: ARSCNViewDelegate, ARSessionDelegate {
 
 // Used to translate a 2d point to 3d space plane
 extension ARSCNView {
-    /**
-     Type conversion wrapper for original `unprojectPoint(_:)` method.
-     Used in contexts where sticking to SIMD3<Float> type is helpful.
-     */
+    
+//     Type conversion wrapper for original `unprojectPoint(_:)` method.
+//     Used in contexts where sticking to SIMD3<Float> type is helpful.
+
     func unprojectPoint(_ point: SIMD3<Float>) -> SIMD3<Float> {
         return SIMD3<Float>(unprojectPoint(SCNVector3(point)))
     }
