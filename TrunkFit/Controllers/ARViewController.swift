@@ -13,16 +13,20 @@ import ARKit
 class ViewController: UIViewController {
 
     @IBOutlet var sceneView: ARSCNView!
+    @IBAction func buttonTap(_ sender: UIButton) {
+        if focusSquare.lastPosition != nil {
+            showTrunk()
+        }
+    }
+    
 
     // Prompts user to find planes
     let coachingOverlay = ARCoachingOverlayView()
     var focusSquare = FocusSquare()
-
-    let updateQueue = DispatchQueue.main //(label: "com.example.apple-samplecode.arkitexample.serialSceneKitQueue")
+    let updateQueue = DispatchQueue.main
     
     
-    
-    
+   // MARK: - Controller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         makeNavBarTransparent(controller: self)
@@ -69,9 +73,16 @@ class ViewController: UIViewController {
         sceneView.session.pause()
     }
     
+    
+    func showTrunk() {
+        
+    }
+    
+    
+    
     // MARK: - Focus Square
-    func updateFocusSquare(isObjectVisible: Bool) {
-        if isObjectVisible || coachingOverlay.isActive {
+    func updateFocusSquare() {
+        if coachingOverlay.isActive {
             focusSquare.hide()
         } else {
             focusSquare.unhide()
@@ -105,6 +116,7 @@ class ViewController: UIViewController {
 }
 
 
+// MARK: - Coaching Overlay Delegate
 extension ViewController: ARCoachingOverlayViewDelegate {
     // https://developer.apple.com/documentation/arkit/placing_objects_and_handling_3d_interaction
     func setupCoachingOverlay() {
@@ -140,11 +152,40 @@ extension ViewController: ARCoachingOverlayViewDelegate {
     }
 }
 
+// MARK: - AR Delegates
 extension ViewController: ARSCNViewDelegate, ARSessionDelegate {
+    // This executes every time user moves camera
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         DispatchQueue.main.async {
-            self.updateFocusSquare(isObjectVisible: false)
+            self.updateFocusSquare()
+            // print("\(self.focusSquare.lastPosition)") //
         }
+    }
+}
+
+
+// Used to translate a 2d point to 3d space plane
+extension ARSCNView {
+    /**
+     Type conversion wrapper for original `unprojectPoint(_:)` method.
+     Used in contexts where sticking to SIMD3<Float> type is helpful.
+     */
+    func unprojectPoint(_ point: SIMD3<Float>) -> SIMD3<Float> {
+        return SIMD3<Float>(unprojectPoint(SCNVector3(point)))
+    }
+    
+    // - Tag: CastRayForFocusSquarePosition
+    func castRay(for query: ARRaycastQuery) -> [ARRaycastResult] {
+        return session.raycast(query)
+    }
+
+    // - Tag: GetRaycastQuery
+    func getRaycastQuery(for alignment: ARRaycastQuery.TargetAlignment = .any) -> ARRaycastQuery? {
+        return raycastQuery(from: screenCenter, allowing: .estimatedPlane, alignment: alignment)
+    }
+    
+    var screenCenter: CGPoint {
+        return CGPoint(x: bounds.midX, y: bounds.midY)
     }
 }
 
