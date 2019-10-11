@@ -10,12 +10,15 @@ import UIKit
 import SceneKit
 import ARKit
 
-class ViewController: UIViewController, ARSCNViewDelegate {
+class ViewController: UIViewController {
 
     @IBOutlet var sceneView: ARSCNView!
 
+    // Prompts user to find planes
     let coachingOverlay = ARCoachingOverlayView()
+    var focusSquare = FocusSquare()
 
+    let updateQueue = DispatchQueue.main //(label: "com.example.apple-samplecode.arkitexample.serialSceneKitQueue")
     
     
     
@@ -39,6 +42,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         setupCoachingOverlay()
         setActivatesAutomatically()
         setGoal()
+        
+        // Add Focus Square so user knows where they will place trunk
+        sceneView.scene.rootNode.addChildNode(focusSquare)
 
     }
     
@@ -63,23 +69,39 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.session.pause()
     }
     
-   
-    
-    
-    
-    
-    
-    
-    // MARK: - ARSCNViewDelegate
-    
-/*
-    // Override to create and configure nodes for anchors added to the view's session.
-    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-        let node = SCNNode()
-     
-        return node
+    // MARK: - Focus Square
+    func updateFocusSquare(isObjectVisible: Bool) {
+        if isObjectVisible || coachingOverlay.isActive {
+            focusSquare.hide()
+        } else {
+            focusSquare.unhide()
+            // statusViewController.scheduleMessage("TRY MOVING LEFT OR RIGHT", inSeconds: 5.0, messageType: .focusSquare)
+        }
+        
+        // Perform ray casting only when ARKit tracking is in a good state.
+        if let camera = sceneView.session.currentFrame?.camera, case .normal = camera.trackingState,
+            let query = sceneView.getRaycastQuery(),
+            let result = sceneView.castRay(for: query).first {
+            
+            updateQueue.async {
+                self.sceneView.scene.rootNode.addChildNode(self.focusSquare)
+                self.focusSquare.state = .detecting(raycastResult: result, camera: camera)
+            }
+            if !coachingOverlay.isActive {
+                // addObjectButton.isHidden = false
+            }
+            // statusViewController.cancelScheduledMessage(for: .focusSquare)
+        } else {
+            updateQueue.async {
+                self.focusSquare.state = .initializing
+                self.sceneView.pointOfView?.addChildNode(self.focusSquare)
+            }
+           // addObjectButton.isHidden = true
+           // objectsViewController?.dismiss(animated: false, completion: nil)
+        }
     }
-*/
+    
+    
 }
 
 
@@ -107,14 +129,25 @@ extension ViewController: ARCoachingOverlayViewDelegate {
         setGoal()
     }
     
-    /// - Tag: CoachingActivatesAutomatically
+    // - Tag: CoachingActivatesAutomatically
     func setActivatesAutomatically() {
         coachingOverlay.activatesAutomatically = true
     }
 
-    /// - Tag: CoachingGoal
+    // - Tag: CoachingGoal
     func setGoal() {
         coachingOverlay.goal = .horizontalPlane
     }
 }
+
+extension ViewController: ARSCNViewDelegate, ARSessionDelegate {
+    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+        DispatchQueue.main.async {
+            self.updateFocusSquare(isObjectVisible: false)
+        }
+    }
+}
+
+
+
 

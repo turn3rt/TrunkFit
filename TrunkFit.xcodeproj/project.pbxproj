@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B35438282350EFF900D3BB47 /* FocusSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35438272350EFF900D3BB47 /* FocusSquare.swift */; };
+		B354382A2350F07700D3BB47 /* FocusSquareSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35438292350F07700D3BB47 /* FocusSquareSegment.swift */; };
 		B366DBC8234D257B00563D74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B366DBC7234D257B00563D74 /* AppDelegate.swift */; };
 		B366DBCA234D257B00563D74 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = B366DBC9234D257B00563D74 /* art.scnassets */; };
 		B366DBCC234D257B00563D74 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B366DBCB234D257B00563D74 /* ARViewController.swift */; };
@@ -31,6 +33,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B35438272350EFF900D3BB47 /* FocusSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusSquare.swift; sourceTree = "<group>"; };
+		B35438292350F07700D3BB47 /* FocusSquareSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusSquareSegment.swift; sourceTree = "<group>"; };
 		B366DBC4234D257B00563D74 /* Trunk Mate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trunk Mate.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B366DBC7234D257B00563D74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B366DBC9234D257B00563D74 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -67,6 +71,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B35438262350EFC800D3BB47 /* FocusSquare */ = {
+			isa = PBXGroup;
+			children = (
+				B35438272350EFF900D3BB47 /* FocusSquare.swift */,
+				B35438292350F07700D3BB47 /* FocusSquareSegment.swift */,
+			);
+			path = FocusSquare;
+			sourceTree = "<group>";
+		};
 		B366DBBB234D257B00563D74 = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +106,7 @@
 				B3A77520234EBA5A00729A33 /* Controllers */,
 				B3854FC3234E8BD200007D70 /* DataModels.swift */,
 				B37B6F7C2350189F001CF19B /* VirtualPlane.swift */,
+				B35438262350EFC800D3BB47 /* FocusSquare */,
 				B366DBE4234D2FD700563D74 /* CarImages */,
 				B366DBDB234D282000563D74 /* Designables */,
 				B366DBCD234D257B00563D74 /* Main.storyboard */,
@@ -234,9 +248,11 @@
 				B3854FBE234E7D1C00007D70 /* HomeVC.swift in Sources */,
 				B3A7751F234EBA5100729A33 /* ModelTVCell.swift in Sources */,
 				B3854FC2234E8AE300007D70 /* SeriesCVCell.swift in Sources */,
+				B354382A2350F07700D3BB47 /* FocusSquareSegment.swift in Sources */,
 				B366DBE2234D282000563D74 /* UIImageViewX.swift in Sources */,
 				B366DBC8234D257B00563D74 /* AppDelegate.swift in Sources */,
 				B366DBE0234D282000563D74 /* UIButtonX.swift in Sources */,
+				B35438282350EFF900D3BB47 /* FocusSquare.swift in Sources */,
 				B37B6F7D2350189F001CF19B /* VirtualPlane.swift in Sources */,
 				B3854FC4234E8BD200007D70 /* DataModels.swift in Sources */,
 				B366DBE1234D282000563D74 /* UILabelX.swift in Sources */,
