@@ -13,21 +13,33 @@ import ARKit
 class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
+
+    let coachingOverlay = ARCoachingOverlayView()
+
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         makeNavBarTransparent(controller: self)
-        // Set the view's delegate
-        sceneView.delegate = self
         
-        // Show statistics such as fps and timing information
+        sceneView.delegate = self
         sceneView.showsStatistics = true
         
         // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
+        let scene = SCNScene()
         
         // Set the scene to the view
         sceneView.scene = scene
+        
+        sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showWorldOrigin]
+        
+        // Configure Plane Detection
+        setupCoachingOverlay()
+        setActivatesAutomatically()
+        setGoal()
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,6 +47,10 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Create a session configuration
         let configuration = ARWorldTrackingConfiguration()
+        
+        // configure session to look for horizontal planes
+        configuration.planeDetection = .horizontal
+
 
         // Run the view's session
         sceneView.session.run(configuration)
@@ -46,7 +62,14 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Pause the view's session
         sceneView.session.pause()
     }
-
+    
+   
+    
+    
+    
+    
+    
+    
     // MARK: - ARSCNViewDelegate
     
 /*
@@ -57,19 +80,41 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         return node
     }
 */
-    
-    func session(_ session: ARSession, didFailWithError error: Error) {
-        // Present an error message to the user
+}
+
+
+extension ViewController: ARCoachingOverlayViewDelegate {
+    // https://developer.apple.com/documentation/arkit/placing_objects_and_handling_3d_interaction
+    func setupCoachingOverlay() {
+        // Set up coaching view
+        coachingOverlay.session = sceneView.session
+        coachingOverlay.delegate = self
         
+        coachingOverlay.translatesAutoresizingMaskIntoConstraints = false
+        sceneView.addSubview(coachingOverlay)
+        
+        NSLayoutConstraint.activate([
+            coachingOverlay.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            coachingOverlay.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            coachingOverlay.widthAnchor.constraint(equalTo: view.widthAnchor),
+            coachingOverlay.heightAnchor.constraint(equalTo: view.heightAnchor)
+            ])
+        
+        setActivatesAutomatically()
+        
+        // Most of the virtual objects in this sample require a horizontal surface,
+        // therefore coach the user to find a horizontal plane.
+        setGoal()
     }
     
-    func sessionWasInterrupted(_ session: ARSession) {
-        // Inform the user that the session has been interrupted, for example, by presenting an overlay
-        
+    /// - Tag: CoachingActivatesAutomatically
+    func setActivatesAutomatically() {
+        coachingOverlay.activatesAutomatically = true
     }
-    
-    func sessionInterruptionEnded(_ session: ARSession) {
-        // Reset tracking and/or remove existing anchors if consistent tracking is required
-        
+
+    /// - Tag: CoachingGoal
+    func setGoal() {
+        coachingOverlay.goal = .horizontalPlane
     }
 }
+

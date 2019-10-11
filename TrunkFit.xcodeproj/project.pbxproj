@@ -21,6 +21,7 @@
 		B366DBE8234D317100563D74 /* bmw2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B366DBE7234D317100563D74 /* bmw2.jpeg */; };
 		B366DBEA234D317900563D74 /* bmw3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B366DBE9234D317900563D74 /* bmw3.jpeg */; };
 		B366DBEC234D450400563D74 /* bluebg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B366DBEB234D450400563D74 /* bluebg.jpg */; };
+		B37B6F7D2350189F001CF19B /* VirtualPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37B6F7C2350189F001CF19B /* VirtualPlane.swift */; };
 		B3854FBA234E7AEB00007D70 /* TrunkMateLogo_NoBG.png in Resources */ = {isa = PBXBuildFile; fileRef = B3854FB9234E7AEB00007D70 /* TrunkMateLogo_NoBG.png */; };
 		B3854FBE234E7D1C00007D70 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3854FBD234E7D1C00007D70 /* HomeVC.swift */; };
 		B3854FC0234E846B00007D70 /* CarPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3854FBF234E846B00007D70 /* CarPickerVC.swift */; };
@@ -46,6 +47,7 @@
 		B366DBE7234D317100563D74 /* bmw2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw2.jpeg; sourceTree = "<group>"; };
 		B366DBE9234D317900563D74 /* bmw3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw3.jpeg; sourceTree = "<group>"; };
 		B366DBEB234D450400563D74 /* bluebg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bluebg.jpg; sourceTree = "<group>"; };
+		B37B6F7C2350189F001CF19B /* VirtualPlane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualPlane.swift; sourceTree = "<group>"; };
 		B3854FB9234E7AEB00007D70 /* TrunkMateLogo_NoBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TrunkMateLogo_NoBG.png; sourceTree = "<group>"; };
 		B3854FBD234E7D1C00007D70 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		B3854FBF234E846B00007D70 /* CarPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPickerVC.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				B3A77521234EBA6100729A33 /* CollectionCells */,
 				B3A77520234EBA5A00729A33 /* Controllers */,
 				B3854FC3234E8BD200007D70 /* DataModels.swift */,
+				B37B6F7C2350189F001CF19B /* VirtualPlane.swift */,
 				B366DBE4234D2FD700563D74 /* CarImages */,
 				B366DBDB234D282000563D74 /* Designables */,
 				B366DBCD234D257B00563D74 /* Main.storyboard */,
@@ -234,6 +237,7 @@
 				B366DBE2234D282000563D74 /* UIImageViewX.swift in Sources */,
 				B366DBC8234D257B00563D74 /* AppDelegate.swift in Sources */,
 				B366DBE0234D282000563D74 /* UIButtonX.swift in Sources */,
+				B37B6F7D2350189F001CF19B /* VirtualPlane.swift in Sources */,
 				B3854FC4234E8BD200007D70 /* DataModels.swift in Sources */,
 				B366DBE1234D282000563D74 /* UILabelX.swift in Sources */,
 				B366DBE3234D282000563D74 /* UIViewX.swift in Sources */,
