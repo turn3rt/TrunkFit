@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     let updateQueue = DispatchQueue.main
     
     // flag to indicate if user has placed trunk
-    var hasPlacedTrunk = false
+    var hasShownTrunk = false
     
     
    // MARK: - Controller Life Cycle
@@ -79,18 +79,23 @@ class ViewController: UIViewController {
     }
     
     
+    // MARK: - Showing Trunk
     func showTrunk() {
-        let bottomPlane = SCNBox(width: 0.1, height: 0.1, length: 0.1, chamferRadius: 0.01)
-        let bottomPlaneNode = SCNNode(geometry: bottomPlane)
-        bottomPlaneNode.position = SCNVector3(focusSquare.lastPosition!)
+        if hasShownTrunk != true {
+            // width is front/back, length is left/right from focus square
+            let bottomPlane = SCNBox(width: 1.1, height: 0.01, length: 1, chamferRadius: 0)
+            let bottomPlaneNode = SCNNode(geometry: bottomPlane)
+            bottomPlaneNode.position = SCNVector3(focusSquare.lastPosition!)
+            
+            let material = SCNMaterial()
+            material.diffuse.contents = UIColor.green
+            material.transparency = CGFloat(0.5)
+            bottomPlane.firstMaterial  = material
+            
+            sceneView.scene.rootNode.addChildNode(bottomPlaneNode)
+        }
         
-        let material = SCNMaterial()
-        material.diffuse.contents = UIColor.green
-        bottomPlane.firstMaterial  = material
-        
-        sceneView.scene.rootNode.addChildNode(bottomPlaneNode)
-        
-        hasPlacedTrunk = true
+        hasShownTrunk = true
     }
     
     
@@ -169,7 +174,7 @@ extension ViewController: ARSCNViewDelegate, ARSessionDelegate {
     // This executes every time user moves camera
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         DispatchQueue.main.async {
-            self.updateFocusSquare(hasPlacedTrunk: self.hasPlacedTrunk)
+            self.updateFocusSquare(hasPlacedTrunk: self.hasShownTrunk)
             // print("\(self.focusSquare.lastPosition)") //
         }
     }
