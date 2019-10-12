@@ -30,7 +30,6 @@ class ViewController: UIViewController {
     // flag to indicate if user has placed trunk
     var hasShownTrunk = false
     
-    
    // MARK: - Controller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +53,7 @@ class ViewController: UIViewController {
         
         // Add Focus Square so user knows where they will place trunk
         sceneView.scene.rootNode.addChildNode(focusSquare)
+        sceneView.autoenablesDefaultLighting = true
 
     }
     
@@ -83,30 +83,110 @@ class ViewController: UIViewController {
     func showTrunk() {
         if hasShownTrunk != true {
             // width is front/back, length is left/right from focus square
-            let bottomPlane = SCNBox(width: 1.1, height: 0.01, length: 1, chamferRadius: 0)
-            let bottomPlaneNode = SCNNode(geometry: bottomPlane)
+            
+            showTrunkOriginPoint(position: SCNVector3(focusSquare.lastPosition!))
+            
+            // Create Nodes
+            let bottomPlane = SCNBox(width: 1.1, height: 0.01, length: 1.0, chamferRadius: 0)
+            var bottomPlaneNode = SCNNode(geometry: bottomPlane)
+            
+            let frontPlane = SCNBox(width: 1.1, height: 0.31, length: 1.0, chamferRadius: 0)
+            var frontPlaneNode = SCNNode(geometry: bottomPlane)
+            
+            let backPlane = SCNBox(width: 1.1, height: 0.31, length: 1.0, chamferRadius: 0)
+            var backPlaneNode = SCNNode(geometry: bottomPlane)
+            
+            
+            
+            
+            // Place Node at center of current focus square position
             bottomPlaneNode.position = SCNVector3(focusSquare.lastPosition!)
+            frontPlaneNode.position = SCNVector3(focusSquare.lastPosition!)
+            backPlaneNode.position = SCNVector3(focusSquare.lastPosition!)
             
+            // normalize to right-hand 3-D coordinate system originating from center of focus square & adjust accordingly...
+            // !!!IMPORTANT NOTE!!!: byAng MUST take 2 params: the x and z vector angle
+            //       transforms in degrees, respectively. [x, z]
+            bottomPlaneNode = adjust(initialNode: bottomPlaneNode,
+                                     byPos: SCNVector3(0, 0, -Float(bottomPlane.length/2)),
+                                     byAngDeg: [0,0])
+            
+            frontPlaneNode = adjust(initialNode: frontPlaneNode,
+                                    byPos: SCNVector3(0, 0, 0),
+                                    byAngDeg: [90, 0])
+            
+            backPlaneNode = adjust(initialNode: frontPlaneNode,
+                                               byPos: SCNVector3(0, 0, -Float(bottomPlane.length/2)),
+                                               byAngDeg: [0, 0])
+            
+            // Create material to be used
             let material = SCNMaterial()
-            material.diffuse.contents = UIColor.green
-            material.transparency = CGFloat(0.5)
-            bottomPlane.firstMaterial  = material
+            material.diffuse.contents = UIColor.gray
+            material.transparency = CGFloat(0.99)
             
+            
+            
+            // Add materials to planes
+            bottomPlane.firstMaterial  = material
+            frontPlane.firstMaterial = material
+            backPlane.firstMaterial = material
+            
+            // Add nodes to scene
             sceneView.scene.rootNode.addChildNode(bottomPlaneNode)
+            // sceneView.scene.rootNode.addChildNode(frontPlaneNode)
+            sceneView.scene.rootNode.addChildNode(backPlaneNode)
+
+            
         }
         
         hasShownTrunk = true
     }
     
+    // MARK: - Internal Functions
+    // This function normalizes a starting node to a right-hand
+    // coordinate system originating from center of focus square
+    // NOTE: byAng MUST take 2 params: the x and z vector angle
+    // transforms in degrees, respectively. [x, z]
+    func adjust(initialNode: SCNNode, byPos: SCNVector3, byAngDeg: [Float]) -> SCNNode {
+        
+        let inputNode = initialNode
+        
+        // rotate about y-axis to reflect orientation user is currently facing
+        let cameraEuler = sceneView.session.currentFrame?.camera.eulerAngles.y
+        
+        inputNode.eulerAngles.x = inputNode.eulerAngles.x + deg2rad(byAngDeg[0])
+        inputNode.eulerAngles.y = cameraEuler!
+        inputNode.eulerAngles.z = inputNode.eulerAngles.z + deg2rad(byAngDeg[1])
+        
+        inputNode.position = SCNVector3(inputNode.position.x + byPos.x,
+                                        inputNode.position.y + byPos.y,
+                                        inputNode.position.z + byPos.z)
+        
+        return inputNode
+
+    }
     
-    
+    // FOR DEBUGGING
+    func showTrunkOriginPoint(position: SCNVector3) {
+        let sphere = SCNSphere(radius: 0.05)
+        let sphereNode = SCNNode(geometry: sphere)
+        sphereNode.position = position
+        
+        let material = SCNMaterial()
+        material.diffuse.contents = UIColor.green
+        sphere.firstMaterial = material
+        
+        sceneView.scene.rootNode.addChildNode(sphereNode)
+    }
+
     // MARK: - Focus Square
     func updateFocusSquare(hasPlacedTrunk: Bool) {
         if coachingOverlay.isActive || hasPlacedTrunk {
+            // TODO: Hide for production
             focusSquare.hide()
         } else {
             focusSquare.unhide()
-            // statusViewController.scheduleMessage("TRY MOVING LEFT OR RIGHT", inSeconds: 5.0, messageType: .focusSquare)
+            //  statusViewController.scheduleMessage("TRY MOVING LEFT OR RIGHT", inSeconds: 5.0, messageType: .focusSquare)
         }
         
         // Perform ray casting only when ARKit tracking is in a good state.
