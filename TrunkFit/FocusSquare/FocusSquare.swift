@@ -9,10 +9,8 @@
 import Foundation
 import ARKit
 
-/**
- An `SCNNode` which is used to provide uses with visual cues about the status of ARKit world tracking.
- - Tag: FocusSquare
- */
+
+// A `SCNNode` which is used to provide uses with visual cues about the status of ARKit world tracking. 
 class FocusSquare: SCNNode {
     // MARK: - Types
     

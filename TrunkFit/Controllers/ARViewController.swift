@@ -12,22 +12,25 @@ import ARKit
 
 class ViewController: UIViewController {
 
+    
+    // MARK: - IB connections
     @IBOutlet var sceneView: ARSCNView!
     @IBAction func buttonTap(_ sender: UIButton) {
         if focusSquare.lastPosition != nil {
             showTrunk()
+            focusSquare.hide()
         }
     }
     
-
     // Prompts user to find planes
     let coachingOverlay = ARCoachingOverlayView()
     var focusSquare = FocusSquare()
     
     // Because I'm lazy
     let updateQueue = DispatchQueue.main
+    let userDefaults = UserDefaults.standard
     
-    // flag to indicate if user has placed trunk
+    // Flag to indicate if user has placed trunk
     var hasShownTrunk = false
     
    // MARK: - Controller Life Cycle
@@ -81,107 +84,94 @@ class ViewController: UIViewController {
     
     // MARK: - Showing Trunk
     func showTrunk() {
-        if hasShownTrunk != true {
-            // width is front/back, length is left/right from focus square
-            
-            showTrunkOriginPoint(position: SCNVector3(focusSquare.lastPosition!))
-            
-            // Create Nodes
-            let bottomPlane = SCNBox(width: 1.1, height: 0.01, length: 1.0, chamferRadius: 0)
-            var bottomPlaneNode = SCNNode(geometry: bottomPlane)
-            
-            let frontPlane = SCNBox(width: 1.1, height: 0.31, length: 1.0, chamferRadius: 0)
-            var frontPlaneNode = SCNNode(geometry: bottomPlane)
-            
-            let backPlane = SCNBox(width: 1.1, height: 0.31, length: 1.0, chamferRadius: 0)
-            var backPlaneNode = SCNNode(geometry: bottomPlane)
-            
-            
-            
-            
-            // Place Node at center of current focus square position
-            bottomPlaneNode.position = SCNVector3(focusSquare.lastPosition!)
-            frontPlaneNode.position = SCNVector3(focusSquare.lastPosition!)
-            backPlaneNode.position = SCNVector3(focusSquare.lastPosition!)
-            
-            // normalize to right-hand 3-D coordinate system originating from center of focus square & adjust accordingly...
-            // !!!IMPORTANT NOTE!!!: byAng MUST take 2 params: the x and z vector angle
-            //       transforms in degrees, respectively. [x, z]
-            bottomPlaneNode = adjust(initialNode: bottomPlaneNode,
-                                     byPos: SCNVector3(0, 0, -Float(bottomPlane.length/2)),
-                                     byAngDeg: [0,0])
-            
-            frontPlaneNode = adjust(initialNode: frontPlaneNode,
-                                    byPos: SCNVector3(0, 0, 0),
-                                    byAngDeg: [90, 0])
-            
-            backPlaneNode = adjust(initialNode: frontPlaneNode,
-                                               byPos: SCNVector3(0, 0, -Float(bottomPlane.length/2)),
-                                               byAngDeg: [0, 0])
-            
-            // Create material to be used
-            let material = SCNMaterial()
-            material.diffuse.contents = UIColor.gray
-            material.transparency = CGFloat(0.99)
-            
-            
-            
-            // Add materials to planes
-            bottomPlane.firstMaterial  = material
-            frontPlane.firstMaterial = material
-            backPlane.firstMaterial = material
-            
-            // Add nodes to scene
-            sceneView.scene.rootNode.addChildNode(bottomPlaneNode)
-            // sceneView.scene.rootNode.addChildNode(frontPlaneNode)
-            sceneView.scene.rootNode.addChildNode(backPlaneNode)
+        let myBMWint = userDefaults.integer(forKey: "myBMW")
 
-            
+        if hasShownTrunk != true {
+            switch myBMWint {
+            case 0:
+                print("Showing the X4 closed seat trunk model")
+                showX4trunk()
+            case 1:
+                print("Showing the X5 closed seat trunk model")
+                showX5trunk()
+            case 2:
+                print("Showing the i3 closed seat trunk model")
+                showi3trunk()
+            default:
+                print("Error parsing myBMW from memory")
+            }
         }
-        
         hasShownTrunk = true
     }
     
+    // MARK: - Initializing Trunks
+    func showX4trunk() {
+        let x4scene = SCNScene(named: "art.scnassets/X4_seatUp.scn")!
+        var x4Node = x4scene.rootNode
+        x4Node.position = SCNVector3(focusSquare.lastPosition!)
+       // normalize to right-hand 3-D coordinate system originating
+       // from center of focus square & adjust if needed...
+        x4Node = adjust(initialNode: x4Node, byPos: SCNVector3Zero)
+        sceneView.scene.rootNode.addChildNode(x4Node)
+    }
+    
+    func showX5trunk() {
+           let x5scene = SCNScene(named: "art.scnassets/X5_seatUp.scn")!
+           var x5Node = x5scene.rootNode
+           x5Node.position = SCNVector3(focusSquare.lastPosition!)
+          // normalize to right-hand 3-D coordinate system originating
+          // from center of focus square & adjust if needed...
+           x5Node = adjust(initialNode: x5Node, byPos: SCNVector3Zero)
+           sceneView.scene.rootNode.addChildNode(x5Node)
+       }
+    
+    func showi3trunk() {
+              let i3scene = SCNScene(named: "art.scnassets/i3_seatUp.scn")!
+              var i3Node = i3scene.rootNode
+              i3Node.position = SCNVector3(focusSquare.lastPosition!)
+             // normalize to right-hand 3-D coordinate system originating
+             // from center of focus square & adjust if needed...
+              i3Node = adjust(initialNode: i3Node, byPos: SCNVector3Zero)
+              sceneView.scene.rootNode.addChildNode(i3Node)
+          }
+    
+    
     // MARK: - Internal Functions
-    // This function normalizes a starting node to a right-hand
+    // This function normalizes the initial node to a right-hand
     // coordinate system originating from center of focus square
-    // NOTE: byAng MUST take 2 params: the x and z vector angle
-    // transforms in degrees, respectively. [x, z]
-    func adjust(initialNode: SCNNode, byPos: SCNVector3, byAngDeg: [Float]) -> SCNNode {
-        
+    func adjust(initialNode: SCNNode, byPos: SCNVector3) -> SCNNode {
+
         let inputNode = initialNode
-        
+
         // rotate about y-axis to reflect orientation user is currently facing
         let cameraEuler = sceneView.session.currentFrame?.camera.eulerAngles.y
-        
-        inputNode.eulerAngles.x = inputNode.eulerAngles.x + deg2rad(byAngDeg[0])
         inputNode.eulerAngles.y = cameraEuler!
-        inputNode.eulerAngles.z = inputNode.eulerAngles.z + deg2rad(byAngDeg[1])
-        
         inputNode.position = SCNVector3(inputNode.position.x + byPos.x,
                                         inputNode.position.y + byPos.y,
                                         inputNode.position.z + byPos.z)
-        
         return inputNode
 
     }
     
-    // FOR DEBUGGING
+    
+    // FOR DEBUGGING, SHOWS THE ORIGIN POINT OF SCENE AFTER ADJUSTMENT
+    // AKA: RIGHT HAND COORDINATE SYSTEM POINT OF ORIGIN FROM CENTER
+    // OF FOCUS SQUARE
     func showTrunkOriginPoint(position: SCNVector3) {
         let sphere = SCNSphere(radius: 0.05)
         let sphereNode = SCNNode(geometry: sphere)
         sphereNode.position = position
-        
+
         let material = SCNMaterial()
         material.diffuse.contents = UIColor.green
         sphere.firstMaterial = material
-        
+
         sceneView.scene.rootNode.addChildNode(sphereNode)
     }
 
     // MARK: - Focus Square
-    func updateFocusSquare(hasPlacedTrunk: Bool) {
-        if coachingOverlay.isActive || hasPlacedTrunk {
+    func updateFocusSquare() {
+        if coachingOverlay.isActive {
             // TODO: Hide for production
             focusSquare.hide()
         } else {
@@ -254,8 +244,7 @@ extension ViewController: ARSCNViewDelegate, ARSessionDelegate {
     // This executes every time user moves camera
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         DispatchQueue.main.async {
-            self.updateFocusSquare(hasPlacedTrunk: self.hasShownTrunk)
-            // print("\(self.focusSquare.lastPosition)") //
+            if !self.hasShownTrunk { self.updateFocusSquare() }
         }
     }
 }
