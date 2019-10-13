@@ -15,16 +15,34 @@ class ViewController: UIViewController {
     
     // MARK: - IB connections
     @IBOutlet var sceneView: ARSCNView!
-    @IBAction func buttonTap(_ sender: UIButton) {
+    @IBOutlet weak var bottomButton: UIButtonX!
+    
+    // TODO: Enable button for production
+    @IBAction func seatDownUpTap(_ sender: UIButton) {
+        // Reset Scene
+        // TODO: Figure out why there is issues with adding a model scene
+        // TODO: back onto root node after running this snippet
+        sceneView.scene.rootNode.enumerateChildNodes { (node, stop) in
+            node.removeFromParentNode()
+        }
+        // Add proper model
+        hasShownTrunk ? putSeatsDown() : showTrunk()
+        // Ternary Operator
+    }
+    
+    @IBAction func sceenTap(_ sender: UITapGestureRecognizer) {
         if focusSquare.lastPosition != nil {
             showTrunk()
             focusSquare.hide()
+            bottomButton.isHidden = true
         }
     }
+    
     
     // Prompts user to find planes
     let coachingOverlay = ARCoachingOverlayView()
     var focusSquare = FocusSquare()
+    var modelOriginPoint = SCNVector3()
     
     // Because I'm lazy
     let updateQueue = DispatchQueue.main
@@ -39,7 +57,8 @@ class ViewController: UIViewController {
         makeNavBarTransparent(controller: self)
         
         sceneView.delegate = self
-        sceneView.showsStatistics = true
+        // FOR DEBUG
+        // sceneView.showsStatistics = true
         
         // Create a new scene
         let scene = SCNScene()
@@ -47,7 +66,8 @@ class ViewController: UIViewController {
         // Set the scene to the view
         sceneView.scene = scene
         
-        sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showWorldOrigin]
+        // FOR DEBUG
+        // sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showWorldOrigin]
         
         // Configure Plane Detection
         setupCoachingOverlay()
@@ -66,10 +86,13 @@ class ViewController: UIViewController {
         // Create a session configuration
         let configuration = ARWorldTrackingConfiguration()
         
-        // configure session to look for horizontal planes
+        // Configure session to look for horizontal planes
         configuration.planeDetection = .horizontal
-
-
+        
+        // Hide UI elements so coaching overlay is prioritized
+        focusSquare.hide()
+        bottomButton.isHidden = true
+        
         // Run the view's session
         sceneView.session.run(configuration)
     }
@@ -88,20 +111,21 @@ class ViewController: UIViewController {
 
         if hasShownTrunk != true {
             switch myBMWint {
-            case 0:
-                print("Showing the X4 closed seat trunk model")
-                showX4trunk()
-            case 1:
-                print("Showing the X5 closed seat trunk model")
-                showX5trunk()
-            case 2:
-                print("Showing the i3 closed seat trunk model")
-                showi3trunk()
-            default:
-                print("Error parsing myBMW from memory")
-            }
+                case 0:
+                    print("Showing the X4 closed seat trunk model")
+                    showX4trunk()
+                case 1:
+                    print("Showing the X5 closed seat trunk model")
+                    showX5trunk()
+                case 2:
+                    print("Showing the i3 closed seat trunk model")
+                    showi3trunk()
+                default:
+                    print("Error parsing myBMW from memory")
+                }
         }
         hasShownTrunk = true
+        bottomButton.isHidden = true
     }
     
     // MARK: - Initializing Trunks
@@ -122,6 +146,7 @@ class ViewController: UIViewController {
           // normalize to right-hand 3-D coordinate system originating
           // from center of focus square & adjust if needed...
            x5Node = adjust(initialNode: x5Node, byPos: SCNVector3Zero)
+        print(x5Node.position)
            sceneView.scene.rootNode.addChildNode(x5Node)
        }
     
@@ -134,6 +159,23 @@ class ViewController: UIViewController {
               i3Node = adjust(initialNode: i3Node, byPos: SCNVector3Zero)
               sceneView.scene.rootNode.addChildNode(i3Node)
           }
+    
+    func putSeatsDown() {
+        let myBMWint = userDefaults.integer(forKey: "myBMW")
+        switch myBMWint {
+           case 0:
+               print("Showing the X4 open seat trunk model")
+               // TODO: showX5trunkOS()
+           case 1:
+               print("Showing the X5 open seat trunk model")
+               // TODO: showi3trunkOS()
+           case 2:
+               print("Showing the i3 open seat trunk model")
+               // TODO: showX4trunkOS()
+           default:
+               print("Error parsing myBMW from memory")
+           }
+    }
     
     
     // MARK: - Internal Functions
@@ -168,15 +210,16 @@ class ViewController: UIViewController {
 
         sceneView.scene.rootNode.addChildNode(sphereNode)
     }
-
+    
     // MARK: - Focus Square
     func updateFocusSquare() {
         if coachingOverlay.isActive {
             // TODO: Hide for production
             focusSquare.hide()
+            bottomButton.isHidden = true
         } else {
             focusSquare.unhide()
-            //  statusViewController.scheduleMessage("TRY MOVING LEFT OR RIGHT", inSeconds: 5.0, messageType: .focusSquare)
+            bottomButton.isHidden = false
         }
         
         // Perform ray casting only when ARKit tracking is in a good state.
@@ -188,17 +231,15 @@ class ViewController: UIViewController {
                 self.sceneView.scene.rootNode.addChildNode(self.focusSquare)
                 self.focusSquare.state = .detecting(raycastResult: result, camera: camera)
             }
-            if !coachingOverlay.isActive {
-                // addObjectButton.isHidden = false
-            }
-            // statusViewController.cancelScheduledMessage(for: .focusSquare)
+//            if !coachingOverlay.isActive {
+//                // addObjectButton.isHidden = false
+//            }
+//            // statusViewController.cancelScheduledMessage(for: .focusSquare)
         } else {
             updateQueue.async {
                 self.focusSquare.state = .initializing
                 self.sceneView.pointOfView?.addChildNode(self.focusSquare)
             }
-           // addObjectButton.isHidden = true
-           // objectsViewController?.dismiss(animated: false, completion: nil)
         }
     }
     

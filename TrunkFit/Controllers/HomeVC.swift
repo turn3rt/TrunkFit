@@ -30,27 +30,4 @@ class HomeVC: UIViewController {
         myBMWlabel.text = DemoModalNames[myBMWint]
         myBMWbutton.setImage(UIImage(named: "bmw\(myBMWint+1).jpeg"), for: .normal)
     }
-    
-    
-    
-    
-    let userDefaults = UserDefaults.standard
-    
-//    func getCurrentCar() -> Int { // returns integer value corresponding to a specific car model
-//        let myBMW = UserDefaults.standard.integer(forKey: "myBMW")
-//
-//        return myBMW
-//    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

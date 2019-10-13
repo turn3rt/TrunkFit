@@ -18,36 +18,55 @@
                         <subviews>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BrB-h1-WRS">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                            </arscnView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfH-x7-tsp">
-                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
-                                <state key="normal" title="Button"/>
+                                <gestureRecognizers/>
                                 <connections>
-                                    <action selector="buttonTap:" destination="BV1-FR-VrT" eventType="touchUpInside" id="7Tf-Mk-B2c"/>
+                                    <outletCollection property="gestureRecognizers" destination="Nko-X5-QLm" appends="YES" id="IUl-gM-Clq"/>
                                 </connections>
+                            </arscnView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfH-x7-tsp" customClass="UIButtonX" customModule="Trunk_Mate" customModuleProvider="target">
+                                <rect key="frame" x="32" y="704" width="311" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="OBi-wv-w5W"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Tap to place trunk on surface."/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="animateFrom">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" id="GsS-dJ-CKf"/>
-                            <constraint firstItem="fQZ-KI-GVf" firstAttribute="bottom" secondItem="wfH-x7-tsp" secondAttribute="bottom" id="NDT-Tp-8Pt"/>
+                            <constraint firstItem="fQZ-KI-GVf" firstAttribute="bottom" secondItem="wfH-x7-tsp" secondAttribute="bottom" constant="32" id="NDT-Tp-8Pt"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="bottom" secondItem="fQZ-KI-GVf" secondAttribute="bottom" constant="34" id="VpT-BR-CcM"/>
-                            <constraint firstItem="fQZ-KI-GVf" firstAttribute="trailing" secondItem="wfH-x7-tsp" secondAttribute="trailing" id="Xi0-Li-lKY"/>
+                            <constraint firstItem="fQZ-KI-GVf" firstAttribute="trailing" secondItem="wfH-x7-tsp" secondAttribute="trailing" constant="32" id="Xi0-Li-lKY"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="trailing" secondItem="fQZ-KI-GVf" secondAttribute="trailing" id="XyZ-9z-H8e"/>
-                            <constraint firstItem="wfH-x7-tsp" firstAttribute="top" secondItem="fQZ-KI-GVf" secondAttribute="top" id="Z03-yZ-g5v"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="top" secondItem="U0K-SW-4ec" secondAttribute="top" id="rJc-2c-zQA"/>
-                            <constraint firstItem="wfH-x7-tsp" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" id="ydu-HY-r6n"/>
+                            <constraint firstItem="wfH-x7-tsp" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" constant="32" id="ydu-HY-r6n"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fQZ-KI-GVf"/>
                     </view>
                     <navigationItem key="navigationItem" id="2dI-xi-ulw"/>
                     <connections>
+                        <outlet property="bottomButton" destination="wfH-x7-tsp" id="zjy-uQ-Qwl"/>
                         <outlet property="sceneView" destination="BrB-h1-WRS" id="rRe-wH-4BJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Nko-X5-QLm">
+                    <connections>
+                        <action selector="sceenTap:" destination="BV1-FR-VrT" id="gjJ-jt-j1A"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-2348" y="789"/>
+            <point key="canvasLocation" x="-2348" y="788.42364532019712"/>
         </scene>
         <!--HomeVC-->
         <scene sceneID="vqa-8u-92u">
