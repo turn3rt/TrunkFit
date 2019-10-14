@@ -77,6 +77,10 @@ class ViewController: UIViewController {
         // Add Focus Square so user knows where they will place trunk
         sceneView.scene.rootNode.addChildNode(focusSquare)
         sceneView.autoenablesDefaultLighting = true
+        // disable power saving mode so it does not interrupt user expereince
+        UIApplication.shared.isIdleTimerDisabled = true
+      
+
 
     }
     
