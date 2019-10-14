@@ -219,7 +219,6 @@ class ViewController: UIViewController {
     // MARK: - Focus Square
     func updateFocusSquare() {
         if coachingOverlay.isActive {
-            // TODO: Hide for production
             focusSquare.hide()
             bottomButton.isHidden = true
         } else {
@@ -236,10 +235,6 @@ class ViewController: UIViewController {
                 self.sceneView.scene.rootNode.addChildNode(self.focusSquare)
                 self.focusSquare.state = .detecting(raycastResult: result, camera: camera)
             }
-//            if !coachingOverlay.isActive {
-//                // addObjectButton.isHidden = false
-//            }
-//            // statusViewController.cancelScheduledMessage(for: .focusSquare)
         } else {
             updateQueue.async {
                 self.focusSquare.state = .initializing
