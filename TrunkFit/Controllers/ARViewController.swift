@@ -135,7 +135,7 @@ class ViewController: UIViewController {
         x4Node.position = SCNVector3(focusSquare.lastPosition!)
        // normalize to right-hand 3-D coordinate system originating
        // from center of focus square & adjust if needed...
-        x4Node = adjust(initialNode: x4Node, byPos: SCNVector3Zero)
+        x4Node = adjust(initialNode: x4Node, byPos: SCNVector3(0.64,0,0))
         sceneView.scene.rootNode.addChildNode(x4Node)
     }
     
@@ -145,7 +145,7 @@ class ViewController: UIViewController {
            x5Node.position = SCNVector3(focusSquare.lastPosition!)
           // normalize to right-hand 3-D coordinate system originating
           // from center of focus square & adjust if needed...
-           x5Node = adjust(initialNode: x5Node, byPos: SCNVector3Zero)
+           x5Node = adjust(initialNode: x5Node, byPos: SCNVector3(0.64,0,0))
         print(x5Node.position)
            sceneView.scene.rootNode.addChildNode(x5Node)
        }
@@ -156,7 +156,7 @@ class ViewController: UIViewController {
               i3Node.position = SCNVector3(focusSquare.lastPosition!)
              // normalize to right-hand 3-D coordinate system originating
              // from center of focus square & adjust if needed...
-              i3Node = adjust(initialNode: i3Node, byPos: SCNVector3Zero)
+        i3Node = adjust(initialNode: i3Node, byPos: SCNVector3(0.64,0,0))
               sceneView.scene.rootNode.addChildNode(i3Node)
           }
     
@@ -182,12 +182,13 @@ class ViewController: UIViewController {
     // This function normalizes the initial node to a right-hand
     // coordinate system originating from center of focus square
     func adjust(initialNode: SCNNode, byPos: SCNVector3) -> SCNNode {
-
+        
         let inputNode = initialNode
 
         // rotate about y-axis to reflect orientation user is currently facing
+        // and spin by 90 deg so it is easier to see trunk dimensions
         let cameraEuler = sceneView.session.currentFrame?.camera.eulerAngles.y
-        inputNode.eulerAngles.y = cameraEuler!
+        inputNode.eulerAngles.y = cameraEuler! + .pi/2
         inputNode.position = SCNVector3(inputNode.position.x + byPos.x,
                                         inputNode.position.y + byPos.y,
                                         inputNode.position.z + byPos.z)
